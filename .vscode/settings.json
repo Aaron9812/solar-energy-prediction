@@ -1,0 +1,12 @@
+{
+    "notebook.output.textLineLimit": 60,
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext",
+        "python"
+    ]
+}

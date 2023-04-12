@@ -32,3 +32,21 @@ def split_data(df_reduced: pd.DataFrame, split_rate: int):
     y_train, y_test = y[:split_index], y[split_index:]
 
     return X_train, y_train, X_test, y_test
+
+
+def calculate_average_performance(results):
+    # calulate averages
+    avg_mse = 0
+    avg_rmse = 0
+    avg_r2 = 0
+
+    for result in results:
+        avg_mse += result.get("results").get("mse")
+        avg_rmse += result.get("results").get("rmse")
+        avg_r2 += result.get("results").get("r2")
+
+    avg_mse = avg_mse / len(results)
+    avg_rmse = avg_rmse / len(results)
+    avg_r2 = avg_r2 / len(results)
+
+    return avg_mse, avg_rmse, avg_r2
